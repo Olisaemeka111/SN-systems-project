@@ -1,0 +1,27 @@
+Prerequisite:
+Docker engine installed, Docker hub account , Kubernetes infrastructure
+
+
+Operation commands
+
+docker build -f Dockerfile -t myimage .   #to build the docker image of the application
+
+docker images                                ##to list all the images already built
+
+docker run -p 8010:5000 <IMAGE ID>          ##to start and run the container with the image Id
+
+http://localhost:8010                       ##to access the image locally
+
+## Maintenance
+To update the service, modify the code and rebuild the Docker image using the commands above.
+
+
+## To push to docker hub
+
+docker tag myimage:latest olisaemeka111/sn-systems-project:latest
+docker push olisaemeka111/sn-systems-project:latest
+
+
+ ##To pull the image for deployment to Kubernetes
+
+ docker pull olisaemeka111/sn-systems-project:latest
